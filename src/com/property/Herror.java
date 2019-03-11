@@ -1,8 +1,8 @@
 /**
  * Copyright (C), 2015-2019, XXX有限公司
- * FileName: B
+ * FileName: H
  * Author:   Administrator
- * Date:     2019/3/10 19:18
+ * Date:     2019/3/11 9:30
  * Description: test
  * History:
  * <author>          <time>          <version>          <desc>
@@ -19,30 +19,28 @@ import java.util.Set;
  * 〈test〉
  *
  * @author Administrator
- * @create 2019/3/10
+ * @create 2019/3/11
  * @since 1.0.0
  */
-public class B {
+public class H {
     public static void main(String[] args) {
         Properties capitals = new Properties();
         Set states;
         String str;
-        capitals.put("A", "a");
-        capitals.put("B", "b");
-        capitals.put("C", "c");
-        capitals.put("D", "d");
-        capitals.put("E", "e");
-        capitals.put("F", "f");
 
-        states = capitals.keySet();
+        capitals.put("Chian", "Beijing");
+        capitals.put("Japan", "Tokyo");
+        capitals.put("USA", "Washimton");
+        capitals.put("Keron", "Shouer");
+
+
+        //使用states前未初始化变量states
         Iterator itr = states.iterator();
+        states = capitals.keySet();
         while(itr.hasNext()){
             str = (String)itr.next();
-            System.out.println("The capital of " + str +"  is  :  "+ capitals.getProperty(str));
+            System.out.println(str + " is: " + capitals.getProperty(str));
         }
-       System.out.println();
-        str = capitals.getProperty("F", "no f");
-        System.out.println("The capital of F is " + str + ",");
     }
 
 }
